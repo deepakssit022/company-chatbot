@@ -7,7 +7,7 @@ import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
 
 const embeddings = new GoogleGenerativeAIEmbeddings({
   model: "gemini-embedding-001",
-  outputDimensionality: 1536,
+  outputDimensionality: 1024,
 });
 
 // const embeddings = new OpenAIEmbeddings({ model: "text-embedding-3-small" });
