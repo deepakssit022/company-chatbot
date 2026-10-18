@@ -17,7 +17,7 @@ const pinecone = new PineconeClient();
 // ✅ CORRECT
 const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX_NAME);
 
-const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
+export const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
   pineconeIndex,
   maxConcurrency: 5, // Default value if omitted is 10
 });
@@ -26,7 +26,7 @@ export async function indexTheDocument(filePath) {
   const loader = new PDFLoader(filePath, { splitPages: false });
   const doc = await loader.load();
 
-//   console.log(doc[0].pageContent);
+  //   console.log(doc[0].pageContent);
 
   const textSplitter = new RecursiveCharacterTextSplitter({
     chunkSize: 1000,
